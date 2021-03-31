@@ -25,21 +25,29 @@ For Arduino Nano board */
  ****************************************************/
 #include <Adafruit_MAX31865.h>
 
-
-#include <SoftwareSerial.h> // Comes with Arduino IDE
-
-
 /*-----( Declare Constants )-----*/
+const int relayPin = 13;   // Pin for relay
+
+// Set levels
+const float temperature_set_value = 55.00;
+
+/*-----( Declare objects )-----*/
+// set the LCD address to 0x20 for a 20 chars 4 line display
+// Set the pins on the I2C chip used for LCD connections:
+//                    addr, en,rw,rs,d4,d5,d6,d7,bl,blpol
+// Set the LCD I2C address 0x20, 0x3f or something else,
+// depending on the I2C circuit
+LiquidCrystal_I2C lcd(0x3f, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE); 
 
 
-
-
-void setup() {
+void setup() 
+{
   // put your setup code here, to run once:
 
 }
 
-void loop() {
+void loop() 
+{
   // put your main code here, to run repeatedly:
 
 }
