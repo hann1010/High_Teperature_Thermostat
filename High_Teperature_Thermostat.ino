@@ -21,8 +21,7 @@ For Arduino Nano board */
   please support Adafruit and open-source hardware by purchasing 
   products from Adafruit!
   Written by Limor Fried/Ladyada for Adafruit Industries.  
-  BSD license, all text above must be included in any redistribution
- ****************************************************/
+  BSD license, all text above must be included in any redistribution */
 #include <Adafruit_MAX31865.h>
 
 /*-----( Declare Constants )-----*/
