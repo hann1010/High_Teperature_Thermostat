@@ -38,6 +38,19 @@ const float temperature_set_value = 55.00;
 // depending on the I2C circuit
 LiquidCrystal_I2C lcd(0x3f, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE); 
 
+// Use software SPI: CS, DI, DO, CLK
+Adafruit_MAX31865 temperature_sensor = Adafruit_MAX31865(11, 9, 10, 8);
+
+// use hardware SPI, just pass in the CS pin
+//Adafruit_MAX31865 max = Adafruit_MAX31865(10);
+
+// The value of the Rref resistor. Use 430.0 for PT100 and 4300.0 for PT1000
+#define RREF_temperature_sensor  427.0
+
+// The 'nominal' 0-degrees-C resistance of the sensor
+// 100.0 for PT100, 1000.0 for PT1000
+#define RNOMINAL  100.0
+
 
 void setup() 
 {
