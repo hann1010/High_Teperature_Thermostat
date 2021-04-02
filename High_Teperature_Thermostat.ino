@@ -26,6 +26,7 @@ For Arduino Nano board */
 
 /*-----( Declare Constants )-----*/
 const int relayPin = 13;   // Pin for relay
+const int hys_value = 5; // Setting up hysteris value
 
 // Set levels
 const float temperature_set_value = 55.00;
