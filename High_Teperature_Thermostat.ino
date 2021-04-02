@@ -51,11 +51,14 @@ Adafruit_MAX31865 temperature_sensor = Adafruit_MAX31865(11, 9, 10, 8);
 // 100.0 for PT100, 1000.0 for PT1000
 #define RNOMINAL  100.0
 
+/*-----( Declare Variables )-----*/
+int last_value = 0;
+float temperature;
 
 void setup() 
 {
-  // put your setup code here, to run once:
-
+  Serial.begin(9600);  // initialize the hardware UART for speed 9600
+  digitalWrite(relayPin, LOW); // Set relay pin to Low
 }
 
 void loop() 
