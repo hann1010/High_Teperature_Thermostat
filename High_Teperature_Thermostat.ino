@@ -61,6 +61,7 @@ void setup()
   Serial.begin(9600);  // initialize the hardware UART for speed 9600
   digitalWrite(relayPin, LOW); // Set relay pin to Low
   lcd.begin(20,4);         // initialize the lcd for 20 chars 4 lines
+  lcd.backlight(); // set backlight on 
 }
 
 void loop() 
