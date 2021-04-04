@@ -62,6 +62,7 @@ void setup()
   digitalWrite(relayPin, LOW); // Set relay pin to Low
   lcd.begin(20,4);         // initialize the lcd for 20 chars 4 lines
   lcd.backlight(); // set backlight on 
+  temperature_sensor.begin(MAX31865_2WIRE);  // initialize Max31865 and Set to 2WIRE or 4WIRE as necessary
 }
 
 void loop() 
