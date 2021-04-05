@@ -63,6 +63,12 @@ void setup()
   lcd.begin(20,4);         // initialize the lcd for 20 chars 4 lines
   lcd.backlight(); // set backlight on 
   temperature_sensor.begin(MAX31865_2WIRE);  // initialize Max31865 and Set to 2WIRE or 4WIRE as necessary
+  lcd.setCursor(0,1); //Start at character 0 on line 2
+  lcd.print("Booting up system...");
+  delay(2000);
+  lcd.setCursor(0,2); //Start at character 0 on line 2
+  lcd.print("High teperature thermostat version.001");
+  delay(5000);
 }
 
 void loop() 
