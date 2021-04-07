@@ -54,7 +54,7 @@ Adafruit_MAX31865 temperature_sensor = Adafruit_MAX31865(11, 9, 10, 8);
 
 /*-----( Declare Variables )-----*/
 int last_value = 0;
-float temperature;
+float temperature_value;
 
 void setup() 
 {
@@ -75,6 +75,6 @@ void setup()
 
 void loop() 
 {
-  // put your main code here, to run repeatedly:
+  temperature_value = temperature_sensor.temperature(RNOMINAL, RREF_temperature_sensor); //Reading temperature
 
 }
