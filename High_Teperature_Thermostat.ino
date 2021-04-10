@@ -76,10 +76,10 @@ void setup()
 void loop() 
 {
   temperature_value = temperature_sensor.temperature(RNOMINAL, RREF_temperature_sensor); //Reading temperature
-
+  temperature_comp();
 }
 
 void temperature_comp()
 {
-  
+
 }
