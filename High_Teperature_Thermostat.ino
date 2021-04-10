@@ -78,3 +78,8 @@ void loop()
   temperature_value = temperature_sensor.temperature(RNOMINAL, RREF_temperature_sensor); //Reading temperature
 
 }
+
+void temperature_comp()
+{
+  
+}
