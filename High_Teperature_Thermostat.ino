@@ -26,7 +26,7 @@ For Arduino Nano board */
 
 /*-----( Declare Constants )-----*/
 const int relayPin = 13;   // Pin for relay
-const int hys_value = 5; // Setting up hysteris value
+const int hys_set_value = 5; // Setting up hysteris value
 
 // Set levels
 const float temperature_set_value = 55.00;
@@ -54,6 +54,7 @@ Adafruit_MAX31865 temperature_sensor = Adafruit_MAX31865(11, 9, 10, 8);
 
 /*-----( Declare Variables )-----*/
 int last_value = 0;
+int temperature_hys = 0;
 float temperature_value;
 
 void setup() 
@@ -81,5 +82,16 @@ void loop()
 
 void temperature_comp()
 {
-
+  int current_value = 0; 
+  if (temperature_value < (temperature_set_value + temperature_hys))
+  {
+    temperature_hys = hys_set_value;
+    current_value += 2;
+    Serial.println("Relay on"); //Debug
+  }
+  else
+  {
+    temperature_hys = 0;
+    Serial.println("Relay off"); //Debug
+  }
 }
