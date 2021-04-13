@@ -78,6 +78,7 @@ void loop()
 {
   temperature_value = temperature_sensor.temperature(RNOMINAL, RREF_temperature_sensor); //Reading temperature
   temperature_comp();
+  display_lcd();
 }
 
 void temperature_comp()
@@ -96,4 +97,9 @@ void temperature_comp()
     digitalWrite(relayPin, LOW); // Set relay pin to Low
     Serial.println("Relay off"); //Debug
   }
+}
+
+void display_lcd()
+{
+
 }
