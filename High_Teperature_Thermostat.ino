@@ -103,4 +103,5 @@ void display_lcd()
 {
   lcd.clear();
   lcd.setCursor(0,0); //Start at character 0 on line 1
+  lcd.print("Temp = "); lcd.print(temperature_value);
 }
