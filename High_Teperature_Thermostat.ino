@@ -53,7 +53,6 @@ Adafruit_MAX31865 temperature_sensor = Adafruit_MAX31865(11, 9, 10, 8);
 #define RNOMINAL  100.0
 
 /*-----( Declare Variables )-----*/
-int last_value = 0;
 int temperature_hys = 0;
 float temperature_value;
 
@@ -79,6 +78,7 @@ void loop()
   temperature_value = temperature_sensor.temperature(RNOMINAL, RREF_temperature_sensor); //Reading temperature
   temperature_comp();
   display_lcd();
+  delay(1000);
 }
 
 void temperature_comp()
@@ -104,4 +104,6 @@ void display_lcd()
   lcd.clear();
   lcd.setCursor(0,0); //Start at character 0 on line 1
   lcd.print("Temp = "); lcd.print(temperature_value);
+  lcd.setCursor(0,1); //Start at character 0 on line 2
+  lcd.print("SW Temp = "); lcd.print(temperature_set_value + temperature_hys);
 }
