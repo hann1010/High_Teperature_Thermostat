@@ -55,6 +55,7 @@ Adafruit_MAX31865 temperature_sensor = Adafruit_MAX31865(11, 9, 10, 8);
 /*-----( Declare Variables )-----*/
 int temperature_hys = 0;
 float temperature_value;
+String state = "";
 
 void setup() 
 {
@@ -89,12 +90,14 @@ void temperature_comp()
     temperature_hys = hys_set_value;
     current_value += 2;
     digitalWrite(relayPin, HIGH); // Set relay pin to High
+    state = "On"
     Serial.println("Relay on"); //Debug
   }
   else
   {
     temperature_hys = 0;
     digitalWrite(relayPin, LOW); // Set relay pin to Low
+    state = "Off"
     Serial.println("Relay off"); //Debug
   }
 }
@@ -106,4 +109,6 @@ void display_lcd()
   lcd.print("Temp = "); lcd.print(temperature_value);
   lcd.setCursor(0,1); //Start at character 0 on line 2
   lcd.print("SW Temp = "); lcd.print(temperature_set_value + temperature_hys);
+  lcd.setCursor(0,1); //Start at character 0 on line 2
+  lcd.print("SW state = "); lcd.print(state);
 }
