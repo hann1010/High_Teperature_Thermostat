@@ -109,6 +109,6 @@ void display_lcd()
   lcd.print("Temp = "); lcd.print(temperature_value);
   lcd.setCursor(0,1); //Start at character 0 on line 2
   lcd.print("SW Temp = "); lcd.print(temperature_set_value + temperature_hys);
-  lcd.setCursor(0,1); //Start at character 0 on line 2
+  lcd.setCursor(0,2); //Start at character 0 on line 2
   lcd.print("SW state = "); lcd.print(state);
 }
