@@ -68,7 +68,7 @@ void setup()
   lcd.print("Booting up system...");
   delay(2000);
   lcd.setCursor(0,1); // Move to character 0 on line 2
-  lcd.print("High temp thermostat version.001");
+  lcd.print("High temp thermostat");
   lcd.setCursor(0,2); // Move to character 0 on line 3
   lcd.print("Version.001");
   delay(5000);
