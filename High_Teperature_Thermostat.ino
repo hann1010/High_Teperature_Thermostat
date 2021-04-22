@@ -72,6 +72,7 @@ void setup()
   lcd.setCursor(0,2); // Move to character 0 on line 3
   lcd.print("Version.001");
   delay(5000);
+  Serial.println("Setup done..."); //Debug
 }
 
 void loop() 
