@@ -91,14 +91,14 @@ void temperature_comp()
     temperature_hys = hys_set_value;
     current_value += 2;
     digitalWrite(relayPin, HIGH); // Set relay pin to High
-    state_message = "On"
+    state_message = "On";
     Serial.println("Relay on"); //Debug
   }
   else
   {
     temperature_hys = 0;
     digitalWrite(relayPin, LOW); // Set relay pin to Low
-    state_message = "Off"
+    state_message = "Off";
     Serial.println("Relay off"); //Debug
   }
 }
