@@ -37,7 +37,7 @@ const float temperature_set_value = 55.00;
 //                    addr, en,rw,rs,d4,d5,d6,d7,bl,blpol
 // Set the LCD I2C address 0x20, 0x3f or something else,
 // depending on the I2C circuit
-LiquidCrystal_I2C lcd(0x3f, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE); 
+LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE); 
 
 // Use software SPI: CS, DI, DO, CLK
 Adafruit_MAX31865 temperature_sensor = Adafruit_MAX31865(11, 9, 10, 8);
@@ -60,6 +60,7 @@ String state_message = "";
 void setup() 
 {
   Serial.begin(9600);  // initialize the hardware UART for speed 9600
+  test_IIC(); //Debug I2C
   digitalWrite(relayPin, LOW); // Set relay pin to Low
   lcd.begin(20,4);         // initialize the lcd for 20 chars 4 lines
   lcd.backlight(); // set backlight on 
@@ -112,4 +113,31 @@ void display_lcd()
   lcd.print("SW Temp = "); lcd.print(temperature_set_value + temperature_hys);
   lcd.setCursor(0,2); //Start at character 0 on line 3
   lcd.print("SW state = "); lcd.print(state_message);
+}
+
+void test_IIC() //Debug I2C
+{
+  Serial.println ();
+  Serial.println ("I2C scanner. Scanning ...");
+  byte count = 0;
+ 
+  Wire.begin();
+  for (byte i = 1; i < 120; i++)
+  {
+    Wire.beginTransmission (i);
+    if (Wire.endTransmission () == 0)
+      {
+      Serial.print ("Found address: ");
+      Serial.print (i, DEC);
+      Serial.print (" (0x");
+      Serial.print (i, HEX);
+      Serial.println (")");
+      count++;
+      delay (1);  // maybe unneeded?
+      } // end of good response
+  } // end of for loop
+  Serial.println ("Done.");
+  Serial.print ("Found ");
+  Serial.print (count, DEC);
+  Serial.println (" device(s).");
 }
