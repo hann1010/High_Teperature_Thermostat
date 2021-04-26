@@ -40,7 +40,7 @@ const float temperature_set_value = 55.00;
 LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE); 
 
 // Use software SPI: CS, DI, DO, CLK
-Adafruit_MAX31865 temperature_sensor = Adafruit_MAX31865(11, 9, 10, 8);
+Adafruit_MAX31865 temperature_sensor = Adafruit_MAX31865(8, 9, 10, 11);
 
 // use hardware SPI, just pass in the CS pin
 //Adafruit_MAX31865 max = Adafruit_MAX31865(10);
@@ -86,11 +86,9 @@ void loop()
 
 void temperature_comp()
 {
-  int current_value = 0; 
   if (temperature_value < (temperature_set_value + temperature_hys))
   {
     temperature_hys = hys_set_value;
-    current_value += 2;
     digitalWrite(relayPin, HIGH); // Set relay pin to High
     state_message = "On";
     Serial.println("Relay on"); //Debug
