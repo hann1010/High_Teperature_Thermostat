@@ -81,6 +81,7 @@ void loop()
   temperature_value = temperature_sensor.temperature(RNOMINAL, RREF_temperature_sensor); //Reading temperature
   temperature_comp();
   display_lcd();
+  Serial.print("Temperature = "); Serial.println(temperature_value);
   delay(1000);
 }
 
