@@ -72,6 +72,7 @@ void setup()
   lcd.print("High temp thermostat");
   lcd.setCursor(0,2); // Move to character 0 on line 3
   lcd.print("Version.001");
+  Serial.print("SW Temperature = "); Serial.print(temperature_set_value + temperature_hys);
   delay(5000);
   Serial.println("Setup done..."); //Debug
 }
