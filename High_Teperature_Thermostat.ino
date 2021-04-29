@@ -26,10 +26,10 @@ For Arduino Nano board */
 
 /*-----( Declare Constants )-----*/
 const int relayPin = 13;   // Pin for relay
-const int hys_set_value = 5; // Setting up hysteris value
 
-// Set levels
-const float temperature_set_value = 55.00;
+// Set values
+const int hys_set_value = 5; // Setting up hysteris value
+const float temperature_set_value = 55.00; // SW value
 
 /*-----( Declare objects )-----*/
 // set the LCD address to 0x20 for a 20 chars 4 line display
