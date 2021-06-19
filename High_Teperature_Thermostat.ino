@@ -1,5 +1,5 @@
 /* High_Teperature_Thermostat Hanna P 2021
-For Arduino Nano board */
+For Arduino Nano or other boards */
 /********************************************/
 
 /*-----( Import needed libraries )-----*/
