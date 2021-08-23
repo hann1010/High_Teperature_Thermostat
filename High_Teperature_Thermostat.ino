@@ -1,4 +1,4 @@
-/* High_Teperature_Thermostat Hanna P 2021 en
+/* High_Teperature_Thermostat en Hanna P 2021 en
 For Arduino Nano or other boards */
 /********************************************/
 
