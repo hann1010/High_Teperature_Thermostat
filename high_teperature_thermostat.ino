@@ -57,6 +57,7 @@ int temperature_hys = 0;
 float temperature_value;
 String state_message = "";
 
+
 void setup() 
 {
   Serial.begin(9600);  // initialize the hardware UART for speed 9600
