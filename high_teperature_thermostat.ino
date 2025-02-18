@@ -78,6 +78,7 @@ void setup()
   Serial.println("Setup done..."); //Debug
 }
 
+
 void loop() 
 {
   temperature_value = temperature_sensor.temperature(RNOMINAL, RREF_temperature_sensor); //Reading temperature
