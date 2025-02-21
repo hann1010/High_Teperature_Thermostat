@@ -107,6 +107,7 @@ void temperature_comp()
   }
 }
 
+
 void display_lcd()
 {
   lcd.clear();
