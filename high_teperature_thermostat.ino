@@ -119,6 +119,7 @@ void display_lcd()
   lcd.print("SW state = "); lcd.print(state_message);
 }
 
+
 void test_IIC() //Debug I2C
 {
   Serial.println ();
