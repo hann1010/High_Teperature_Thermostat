@@ -139,7 +139,7 @@ void test_IIC() //Debug I2C
       count++;
       delay (1);  // maybe unneeded?
       } // end of good response
-  } // end of for loop
+  }   // end of for loop
   Serial.println ("Done.");
   Serial.print ("Found ");
   Serial.print (count, DEC);
